@@ -1,0 +1,38 @@
+.project-card {
+    display: block;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.2s;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .project-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .project-image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .project-info {
+    padding: 20px;
+    background-color: #2A2A2A;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .project-info h3 {
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: 600;
+  }
+  
+  .arrow {
+    font-size: 1.5em;
+  }
+  

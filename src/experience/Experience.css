@@ -1,0 +1,57 @@
+.experience {
+  padding: 50px 20px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.experience h2 {
+  font-size: 35px;
+  font-weight: 800;
+  background: linear-gradient(to bottom, #5BADFF, #1373D1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.experience-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 20px;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.experience-list {
+  flex: 1;
+  padding: 20px;
+  text-align: left;
+}
+
+.experience-list h4 {
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px 0;
+  transition: background-color 0.3s;
+  font-size: 20px;
+  font-weight: 500;
+  color: #2F5ACA;
+}
+
+.experience-list h4:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.experience-list h4.active {
+  background-color: rgba(255, 255, 255, 0.2);
+  font-weight: bold;
+  color: #7C9EF4;
+}
+
+.experience-card {
+  flex: 2;
+  margin-left: 20px;
+}
