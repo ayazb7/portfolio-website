@@ -1,8 +1,8 @@
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 5px 20px;
+  padding: 5px 40px;
   background-color: #222222;
   color: white;
   position: fixed;
@@ -24,7 +24,7 @@
   list-style: none;
   display: flex;
   gap: 35px;
-  margin-right: 50px;
+  margin-right: 80px;
 }
 
 .navbar-links a {

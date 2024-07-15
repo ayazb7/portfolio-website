@@ -22,7 +22,7 @@ function Experience() {
         'Developed a mobile application using Flutter for cross-platform use, alongside a Django REST API framework backend to communicate with the routing algorithm',
         'Designed a modern, intuitive UI using Figma following Google Material design',
       ],
-      websiteUrl:"https://www.linkedin.com/company/evtonomy/" 
+      websiteUrl:"https://evsatnav.com/" 
     },
     {
       id: 2,
@@ -57,7 +57,7 @@ function Experience() {
 
   return (
     <div className="experience">
-      <h2>EXPERIENCE</h2>
+      <h2>CAREER</h2>
       <div className="experience-container">
         <div className="experience-list">
           {experiences.map((exp) => (

@@ -16,7 +16,7 @@ function Projects() {
   useEffect(() => {
     if (scrollRef.current) {
       const { current } = scrollRef;
-      current.scrollLeft = current.offsetWidth; 
+      current.scrollLeft = 0; // Start at the beginning
     }
   }, []);
 
@@ -38,15 +38,6 @@ function Projects() {
     scrollRef.current.scrollLeft = scrollLeft - walk;
   };
 
-  const handleScroll = () => {
-    const { current } = scrollRef;
-    if (current.scrollLeft >= current.scrollWidth - current.offsetWidth) {
-      current.scrollLeft = current.offsetWidth;
-    } else if (current.scrollLeft <= 0) {
-      current.scrollLeft = current.scrollWidth - (2 * current.offsetWidth);
-    }
-  };
-
   return (
     <div className="projects">
       <h2>PROJECTS</h2>
@@ -57,17 +48,12 @@ function Projects() {
         onMouseLeave={stopDragging}
         onMouseUp={stopDragging}
         onMouseMove={onMouseMove}
-        onScroll={handleScroll}
+        onDragStart={(e) => e.preventDefault()}
       >
         <ProjectCard 
-          image={salamHealthImage} 
-          title="Salam Health" 
-          url="https://github.com/ayazb7/salam-health-website" 
-        />
-        <ProjectCard 
           image={researchProjImage} 
-          title="Dementia Research Project" 
-          url="https://github.com/ayazb7/salam-health-website" 
+          title="Dementia ML Research Project" 
+          url="https://github.com/ayazb7/individual-project" 
         />
         <ProjectCard 
           image={qwizImage} 
@@ -79,7 +65,11 @@ function Projects() {
           title="Virtual Lab" 
           url="https://github.com/ayazb7/Virtual-Lab" 
         />
-        
+        <ProjectCard 
+          image={salamHealthImage} 
+          title="Salam Health" 
+          url="https://github.com/ayazb7/salam-health-website" 
+        />
       </div>
     </div>
   );

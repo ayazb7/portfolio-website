@@ -11,7 +11,7 @@ function Navbar() {
         </Link>
       </div>
       <ul className="navbar-links">
-        <li><Link to="experience" smooth={true} duration={500}>Experience</Link></li>
+        <li><Link to="experience" smooth={true} duration={500}>Career</Link></li>
         <li><Link to="projects" smooth={true} duration={500}>Projects</Link></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
