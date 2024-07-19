@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Navbar from './components/Navbar';
 import About from './about/About';
 import Experience from './experience/Experience';
@@ -22,6 +22,10 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 function App() {
+  useEffect(() => {
+    getAnalytics(app);
+  }, []);
+
   return (
     <div className="App">
       <Navbar />
