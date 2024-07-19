@@ -7,6 +7,7 @@ import researchProjImage from './images/researchproj.png';
 import qwizImage from './images/qwiz.png'; 
 import virtualLabImage from './images/virtuallab.png';
 import salamHealthImage from './images/salamhealth.png';
+import portfolioImage from './images/portfolio.png';
 
 function Projects() {
   const sliderRef = useRef(null);
@@ -67,6 +68,11 @@ function Projects() {
             image={qwizImage} 
             title="Qwiz - AI Revision Tool" 
             url="https://github.com/Cloud-Team-F/Qwiz" 
+          />
+          <ProjectCard 
+            image={portfolioImage} 
+            title="Portfolio" 
+            url="https://github.com/ayazb7/portfolio-website" 
           />
           <ProjectCard 
             image={virtualLabImage} 

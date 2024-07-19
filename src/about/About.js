@@ -9,6 +9,7 @@ import jsLogo from './logos/javascript.png';
 import reactLogo from './logos/react.png';
 import swiftLogo from './logos/swift.png';
 import nodejsLogo from './logos/nodejs.png';
+import figmaLogo from './logos/figma.png';
 
 const variants = {
   hidden: { opacity: 0, y: 50 },
@@ -58,7 +59,7 @@ function About() {
         variants={variants}
         transition={{ duration: 0.8, delay: 0.5 }}
       >
-        Specializing in Machine Learning, Mobile App Development, and Web Development, I bring a wealth of practical experience and a strong academic background. My passion for technology drives me to excel in developing innovative solutions, demonstrated through my successful projects in mobile application development and research initiatives in Machine Learning.
+        Fourth year Computer Science student specializing in Machine Learning, Mobile App Development, and Web Development. With a strong academic background and practical experience, I'm dedicated to building smart and efficient solutions. Explore my work and let's connect!
       </motion.p>
       <motion.div 
         className="buttons"
@@ -88,6 +89,7 @@ function About() {
           <motion.img src={reactLogo} alt="React" variants={logoVariants} />
           <motion.img src={swiftLogo} alt="Swift" variants={logoVariants} />
           <motion.img src={nodejsLogo} alt="Node.js" variants={logoVariants} />
+          <motion.img src={figmaLogo} alt="Figma" variants={logoVariants} />
         </motion.div>
       </motion.div>
     </motion.div>
