@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import './Projects.css';
 import ProjectCard from './ProjectCard';
 
@@ -9,15 +10,21 @@ import virtualLabImage from './images/virtuallab.png';
 import salamHealthImage from './images/salamhealth.png';
 import portfolioImage from './images/portfolio.png';
 
+const headerVariants = {
+  hidden: { opacity: 0, y: -50 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+};
+
 function Projects() {
   const sliderRef = useRef(null);
   const slidesRef = useRef(null);
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
 
   const [sliderWidth, setSliderWidths] = useState(0);
   const [slidesWidth, setSlidesWidths] = useState(0);
 
   const slideMarginRight = 20;
-  const totalSlidesMarginRight = slideMarginRight * 4
+  const totalSlidesMarginRight = slideMarginRight * 4;
 
   useEffect(() => {
     const measureSliderWidth = () => {
@@ -48,7 +55,14 @@ function Projects() {
 
   return (
     <div className="projects">
-      <h2>PROJECTS</h2>
+      <motion.h2 
+        ref={ref}
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+        variants={headerVariants}
+      >
+        PROJECTS
+      </motion.h2>
       <div ref={sliderRef} className="carousel-container">
         <motion.div
           ref={slidesRef}
@@ -84,16 +98,6 @@ function Projects() {
             title="Salam Health" 
             url="https://github.com/ayazb7/salam-health-website" 
           />
-          {/* <ProjectCard 
-            image={salamHealthImage} 
-            title="Salam Health" 
-            url="https://github.com/ayazb7/salam-health-website" 
-          />
-          <ProjectCard 
-            image={salamHealthImage} 
-            title="Salam Health" 
-            url="https://github.com/ayazb7/salam-health-website" 
-          /> */}
         </motion.div>
       </div>
     </div>
