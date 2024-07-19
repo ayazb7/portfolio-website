@@ -1,5 +1,6 @@
-
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import ExperienceCard from './ExperienceCard';
 import './Experience.css';
 
@@ -8,7 +9,6 @@ import armLogo from './logos/arm2.jpeg';
 import classifyLogo from './logos/classify.png';
 
 function Experience() {
-
   const experiences = [
     {
       id: 1,
@@ -22,7 +22,7 @@ function Experience() {
         'Developed a mobile application using Flutter for cross-platform use, alongside a Django REST API framework backend to communicate with the routing algorithm',
         'Designed a modern, intuitive UI using Figma following Google Material design',
       ],
-      websiteUrl:"https://evsatnav.com/" 
+      websiteUrl: "https://evsatnav.com/"
     },
     {
       id: 2,
@@ -36,7 +36,7 @@ function Experience() {
         'Integrated several cloud technologies including Google Firebase and Cloud Functions, to serve as a backend for the application',
         'Collaborated with industry-leading air quality monitor manufacturers to integrate their REST APIs within the app'
       ],
-      websiteUrl:"https://www.f-air.org/" 
+      websiteUrl: "https://www.f-air.org/"
     },
     {
       id: 3,
@@ -49,37 +49,68 @@ function Experience() {
         'Took charge and collaborated with a group of developers across the world to release vital major updates which have majorly increased the userbase and user retention',
         'Released major updates to take the app to the top 5% of the Education category on the Apple App Store and the Google Play Store',
       ],
-      websiteUrl:"https://classify.org.uk/" 
+      websiteUrl: "https://classify.org.uk/"
     },
   ];
 
   const [selectedExperience, setSelectedExperience] = useState(experiences[0]);
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const headingVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+  };
+
+  const listItemVariants = {
+    hidden: { opacity: 0, x: -50 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } }
+  };
 
   return (
-    <div className="experience">
-      <h2>CAREER</h2>
+    <motion.div 
+      className="experience"
+      ref={ref}
+      initial="hidden"
+      animate={inView ? "visible" : "hidden"}
+      variants={containerVariants}
+    >
+      <motion.h2 variants={headingVariants}>CAREER</motion.h2>
       <div className="experience-container">
         <div className="experience-list">
           {experiences.map((exp) => (
-            <h4
+            <motion.h4
               key={exp.id}
               onClick={() => setSelectedExperience(exp)}
               className={exp.id === selectedExperience.id ? 'active' : ''}
+              variants={listItemVariants}
             >
               {exp.companyName}
-            </h4>
+            </motion.h4>
           ))}
         </div>
-        <ExperienceCard
-          image={selectedExperience.companyLogo}
-          jobTitle={selectedExperience.jobTitle}
-          companyName={selectedExperience.companyName}
-          dateRange={selectedExperience.dateRange}
-          description={selectedExperience.description}
-          websiteUrl={selectedExperience.websiteUrl}
-        />
+        <motion.div layout>
+          <ExperienceCard
+            key={selectedExperience.id}
+            image={selectedExperience.companyLogo}
+            jobTitle={selectedExperience.jobTitle}
+            companyName={selectedExperience.companyName}
+            dateRange={selectedExperience.dateRange}
+            description={selectedExperience.description}
+            websiteUrl={selectedExperience.websiteUrl}
+          />
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

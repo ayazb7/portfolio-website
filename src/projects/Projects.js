@@ -1,4 +1,5 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import './Projects.css';
 import ProjectCard from './ProjectCard';
 
@@ -8,68 +9,86 @@ import virtualLabImage from './images/virtuallab.png';
 import salamHealthImage from './images/salamhealth.png';
 
 function Projects() {
-  const scrollRef = useRef(null);
-  const [isDown, setIsDown] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [scrollLeft, setScrollLeft] = useState(0);
+  const sliderRef = useRef(null);
+  const slidesRef = useRef(null);
+
+  const [sliderWidth, setSliderWidths] = useState(0);
+  const [slidesWidth, setSlidesWidths] = useState(0);
+
+  const slideMarginRight = 20;
+  const totalSlidesMarginRight = slideMarginRight * 4
 
   useEffect(() => {
-    if (scrollRef.current) {
-      const { current } = scrollRef;
-      current.scrollLeft = 0; // Start at the beginning
-    }
-  }, []);
+    const measureSliderWidth = () => {
+      setSliderWidths(sliderRef.current.clientWidth);
+    };
 
-  const startDragging = (e) => {
-    setIsDown(true);
-    setStartX(e.pageX - scrollRef.current.offsetLeft);
-    setScrollLeft(scrollRef.current.scrollLeft);
-  };
+    const measureSlidesWidth = () => {
+      const slidesNode = slidesRef.current.childNodes;
+      const slidesArr = Array.from(slidesNode);
+      const slidesSumWidth = slidesArr.reduce(
+        (acc, node) => acc + node.clientWidth + slideMarginRight,
+        0
+      );
+      setSlidesWidths(slidesSumWidth);
+    };
 
-  const stopDragging = () => {
-    setIsDown(false);
-  };
+    measureSliderWidth();
+    measureSlidesWidth();
 
-  const onMouseMove = (e) => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - scrollRef.current.offsetLeft;
-    const walk = (x - startX) * 3; 
-    scrollRef.current.scrollLeft = scrollLeft - walk;
-  };
+    window.addEventListener('resize', measureSliderWidth);
+    window.addEventListener('resize', measureSlidesWidth);
+
+    return () => {
+      window.removeEventListener('resize', measureSliderWidth);
+      window.removeEventListener('resize', measureSlidesWidth);
+    };
+  }, [sliderWidth, slidesWidth]);
 
   return (
     <div className="projects">
       <h2>PROJECTS</h2>
-      <div 
-        className="carousel-container" 
-        ref={scrollRef}
-        onMouseDown={startDragging}
-        onMouseLeave={stopDragging}
-        onMouseUp={stopDragging}
-        onMouseMove={onMouseMove}
-        onDragStart={(e) => e.preventDefault()}
-      >
-        <ProjectCard 
-          image={researchProjImage} 
-          title="Dementia ML Research Project" 
-          url="https://github.com/ayazb7/individual-project" 
-        />
-        <ProjectCard 
-          image={qwizImage} 
-          title="Qwiz - AI Revision Tool" 
-          url="https://github.com/Cloud-Team-F/Qwiz" 
-        />
-        <ProjectCard 
-          image={virtualLabImage} 
-          title="Virtual Lab" 
-          url="https://github.com/ayazb7/Virtual-Lab" 
-        />
-        <ProjectCard 
-          image={salamHealthImage} 
-          title="Salam Health" 
-          url="https://github.com/ayazb7/salam-health-website" 
-        />
+      <div ref={sliderRef} className="carousel-container">
+        <motion.div
+          ref={slidesRef}
+          drag="x"
+          dragConstraints={{
+            left: -(slidesWidth - sliderWidth + totalSlidesMarginRight),
+            right: 0,
+          }}
+          className="slides"
+        >
+          <ProjectCard 
+            image={researchProjImage} 
+            title="Dementia ML Research Project" 
+            url="https://github.com/ayazb7/individual-project" 
+          />
+          <ProjectCard 
+            image={qwizImage} 
+            title="Qwiz - AI Revision Tool" 
+            url="https://github.com/Cloud-Team-F/Qwiz" 
+          />
+          <ProjectCard 
+            image={virtualLabImage} 
+            title="Virtual Lab" 
+            url="https://github.com/ayazb7/Virtual-Lab" 
+          />
+          <ProjectCard 
+            image={salamHealthImage} 
+            title="Salam Health" 
+            url="https://github.com/ayazb7/salam-health-website" 
+          />
+          {/* <ProjectCard 
+            image={salamHealthImage} 
+            title="Salam Health" 
+            url="https://github.com/ayazb7/salam-health-website" 
+          />
+          <ProjectCard 
+            image={salamHealthImage} 
+            title="Salam Health" 
+            url="https://github.com/ayazb7/salam-health-website" 
+          /> */}
+        </motion.div>
       </div>
     </div>
   );

@@ -14,23 +14,27 @@
 }
 
 .carousel-container {
-  display: flex;
-  overflow-x: scroll;
-  scroll-behavior: smooth;
+  overflow-x: hidden;
   padding: 20px 0;
+  cursor: grab;
+  position: relative;
+}
+
+.slides {
+  display: flex;
   gap: 20px;
+  will-change: transform;
+}
+
+.slides:hover {
   cursor: grab;
 }
 
-.carousel-container.active {
+.slides:active {
   cursor: grabbing;
 }
 
-.carousel-container::-webkit-scrollbar {
-  display: none; /* Hide scrollbar */
-}
-
-.project-card:nth-child(2),
-.project-card:nth-child(3) {
-  opacity: 1;
+.project-card {
+  flex: 0 0 auto;
+  width: 23%;
 }

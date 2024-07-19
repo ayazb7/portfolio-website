@@ -1,10 +1,22 @@
 import React from 'react';
 import { Link } from 'react-scroll';
+import { motion } from 'framer-motion';
 import './Navbar.css';
+
+const navbarVariants = {
+  hidden: { opacity: 0, y: -50 },
+  visible: { opacity: 1, y: 0 }
+};
 
 function Navbar() {
   return (
-    <nav className="navbar">
+    <motion.nav 
+      className="navbar"
+      initial="hidden"
+      animate="visible"
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      variants={navbarVariants}
+    >
       <div className="navbar-logo">
         <Link to="about" smooth={true} duration={500}>
           <img src="/logo.png" alt="Logo" />
@@ -15,7 +27,7 @@ function Navbar() {
         <li><Link to="projects" smooth={true} duration={500}>Projects</Link></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-    </nav>
+    </motion.nav>
   );
 }
 
