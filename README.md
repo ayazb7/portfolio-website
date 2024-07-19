@@ -33,22 +33,24 @@ You will need to have the following software installed on your machine:
 
 Clone the repository to your local machine:
 
-\`\`\`bash
+```bash
 git clone https://github.com/ayazb7/portfolio-website
 cd portfolio-website
-\`\`\`
+```
 
 Install the dependencies:
 
-\`\`\`bash
+```bash
 npm install
-\`\`\`
+```
 
 ## 🎈 Usage <a name="usage"></a>
 
 In the project directory, you can run:
 
-### \`npm start\`
+```bash
+npm start
+```
 
 Runs the app in the development mode.Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
