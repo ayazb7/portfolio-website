@@ -32,9 +32,9 @@ function Experience() {
       dateRange: 'August 2023 - February 2024',
       description: [
         'Lead the development of a fully functioning cross-platform mobile application using Flutter and Google Cloud backend functions',
-        'Designed a modern mobile UI using Figma based on client requirements, alongside an Agile development approach',
+        'Designed a modern mobile UI using Figma following a CI/CD flow alongside agile development to gauge client requirements and improve designs',
         'Integrated several cloud technologies including Google Firebase and Cloud Functions, to serve as a backend for the application',
-        'Collaborated with industry-leading air quality monitor manufacturers to integrate their REST APIs within the app'
+        'Collaborated with industry-leading air quality monitor manufacturers to integrate their external devices within the app using REST APIs and network analysis'
       ],
       websiteUrl: "https://www.f-air.org/"
     },
@@ -47,7 +47,7 @@ function Experience() {
       description: [
         'Engineered and designed new features for an intuitive mobile application using Flutter alongside Google Cloud & Firebase to create a popular application compatible on iOS and Android, used by students worldwide',
         'Took charge and collaborated with a group of developers across the world to release vital major updates which have majorly increased the userbase and user retention',
-        'Released major updates to take the app to the top 5% of the Education category on the Apple App Store and the Google Play Store',
+        'Released major updates and several minor updates to take the app to the top 5% of the Education category on the Apple App Store and the Google Play Store',
       ],
       websiteUrl: "https://classify.org.uk/"
     },

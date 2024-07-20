@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import About from './about/About';
 import Experience from './experience/Experience';
 import Projects from './projects/Projects';
+import Contact from './contact/Contact';
 import Footer from './components/Footer';
 import './App.css';
 
@@ -37,6 +38,9 @@ function App() {
       </section>
       <section id="projects">
         <Projects />
+      </section>
+      <section id="contact">
+        <Contact />
       </section>
       <Footer />
     </div>

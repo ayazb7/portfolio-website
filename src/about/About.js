@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-scroll';
 import './About.css';
 
 import javaLogo from './logos/java.png';
@@ -66,7 +67,7 @@ function About() {
         variants={variants}
         transition={{ duration: 0.8, delay: 0.6 }}
       >
-        <a href="#contact" className="button">Get In Touch</a>
+        <Link to="contact" smooth={true} duration={500} className="button">Get In Touch</Link>
         <a href="/cv.pdf" className="button button-outline" download>Download CV</a>
       </motion.div>
       <motion.div 

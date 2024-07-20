@@ -9,6 +9,7 @@ import qwizImage from './images/qwiz.png';
 import virtualLabImage from './images/virtuallab.png';
 import salamHealthImage from './images/salamhealth.png';
 import portfolioImage from './images/portfolio.png';
+import quiplashImage from './images/quiplash.png';
 
 const headerVariants = {
   hidden: { opacity: 0, y: -50 },
@@ -87,6 +88,11 @@ function Projects() {
             image={portfolioImage} 
             title="Portfolio" 
             url="https://github.com/ayazb7/portfolio-website" 
+          />
+          <ProjectCard 
+            image={quiplashImage} 
+            title="Quiplash Clone" 
+            url="https://github.com/ayazb7/quiplash" 
           />
           <ProjectCard 
             image={virtualLabImage} 
