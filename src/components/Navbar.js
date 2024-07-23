@@ -31,6 +31,10 @@ const sideVariants = {
 function Navbar() {
   const [open, cycleOpen] = useCycle(false, true);
 
+  const handleLinkClick = () => {
+    cycleOpen();
+  };
+
   return (
     <motion.nav 
       className="navbar"
@@ -70,25 +74,25 @@ function Navbar() {
               variants={sideVariants}
             >
               <motion.a
-                href="#experience"
+                onClick={handleLinkClick}
                 whileHover={{ scale: 1.1 }}
                 variants={itemVariants}
               >
-                Career
+                <Link to="experience" smooth={true} duration={500} onClick={handleLinkClick}>Career</Link>
               </motion.a>
               <motion.a
-                href="#projects"
+                onClick={handleLinkClick}
                 whileHover={{ scale: 1.1 }}
                 variants={itemVariants}
               >
-                Projects
+                <Link to="projects" smooth={true} duration={500} onClick={handleLinkClick}>Projects</Link>
               </motion.a>
               <motion.a
-                href="#contact"
+                onClick={handleLinkClick}
                 whileHover={{ scale: 1.1 }}
                 variants={itemVariants}
               >
-                Contact
+                <Link to="contact" smooth={true} duration={500} onClick={handleLinkClick}>Contact</Link>
               </motion.a>
             </motion.div>
           </motion.aside>
