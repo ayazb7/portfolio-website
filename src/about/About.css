@@ -103,10 +103,28 @@ p {
     font-size: 18px;
   }
 
+  .experience-with {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .experience-with h3 {
+    font-size: 12px;
+    margin-bottom: 15px;
+  }
+
   .logos {
     position: relative;
     padding: 20px 0;
     cursor: grab;
     width: 55%;
+    gap: 20px; 
+  }
+
+  .logos img {
+    height: 16px; 
+    width: auto; 
   }
 }

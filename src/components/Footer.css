@@ -62,3 +62,31 @@
   transform: scale(1.1);
   color: white;
 }
+
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 35px 0;
+    width: 100vw;
+  }
+
+  .footer-content {
+    width: 85%;
+  }
+
+  .footer h2 {
+    font-size: 20px;
+  }
+
+  .footer p {
+    font-size: 16px;
+  }
+
+  .email .icon {
+    font-size: 18px;
+  }
+
+  .social-icons .icon {
+    font-size: 18px;
+  }
+}

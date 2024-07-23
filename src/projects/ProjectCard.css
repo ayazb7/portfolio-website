@@ -28,7 +28,7 @@
 
 .project-info h3 {
   margin: 0;
-  font-size: 1.2em;
+  font-size: 1.2rem;
   font-weight: 600;
 }
 
@@ -42,4 +42,10 @@
   background-color: white;
   border-radius: 50%;
   padding: 5px;
+}
+
+@media (max-width: 768px) {
+  .project-info h3 {
+    font-size: 1rem;
+  }
 }

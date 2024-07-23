@@ -55,3 +55,32 @@
   flex: 2;
   margin-left: 20px;
 }
+
+@media (max-width: 768px) {
+  .experience {
+    padding: 40px 0;
+  }
+
+  .experience-container {
+    flex-direction: column;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    align-items: center;
+  }
+
+  .experience-list {
+    width: 85%;
+    padding: 10px;
+    margin-bottom: 20px; 
+  }
+
+  .experience-card {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .experience-list h4 {
+    font-size: 17px;
+  }
+}

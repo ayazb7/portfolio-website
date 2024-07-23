@@ -28,6 +28,7 @@ function Projects() {
 
   const [sliderWidth, setSliderWidths] = useState(0);
   const [slidesWidth, setSlidesWidths] = useState(0);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   const slideMarginRight = 20;
   const totalSlidesMarginRight = slideMarginRight * 4;
@@ -47,15 +48,19 @@ function Projects() {
       setSlidesWidths(slidesSumWidth);
     };
 
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+      measureSliderWidth();
+      measureSlidesWidth();
+    };
+
     measureSliderWidth();
     measureSlidesWidth();
 
-    window.addEventListener('resize', measureSliderWidth);
-    window.addEventListener('resize', measureSlidesWidth);
+    window.addEventListener('resize', handleResize);
 
     return () => {
-      window.removeEventListener('resize', measureSliderWidth);
-      window.removeEventListener('resize', measureSlidesWidth);
+      window.removeEventListener('resize', handleResize);
     };
   }, [sliderWidth, slidesWidth]);
 
@@ -76,11 +81,11 @@ function Projects() {
           animate="visible"
           variants={cardVariants}
           transition={{ staggerChildren: 0.2, delayChildren: 0.8 }}
-          drag="x"
-          dragConstraints={{
+          drag={!isMobile ? "x" : false}
+          dragConstraints={!isMobile ? {
             left: -(slidesWidth - sliderWidth + totalSlidesMarginRight),
             right: 0,
-          }}
+          } : undefined}
           className="slides"
         >
           <ProjectCard 
