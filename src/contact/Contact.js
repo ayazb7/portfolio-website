@@ -46,13 +46,13 @@ function Contact() {
         setIsSubmitting(false);
         setSubmitStatus('success');
         setFormData({ from_name: '', from_email: '', message: '' });
-        setTimeout(() => setSubmitStatus('initial'), 3000); 
+        setTimeout(() => setSubmitStatus('initial'), 5000); 
       })
       .catch((error) => {
         console.log('FAILED...', error);
         setIsSubmitting(false);
         setSubmitStatus('error');
-        setTimeout(() => setSubmitStatus('initial'), 3000);
+        setTimeout(() => setSubmitStatus('initial'), 5000);
       });
   };
 

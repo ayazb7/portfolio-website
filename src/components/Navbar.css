@@ -32,3 +32,56 @@
   text-decoration: none;
   cursor: pointer;
 }
+
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 24px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.burger-bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  border-radius: 3px;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  background-color: #222222;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.sidebar-container {
+  display: flex;
+  flex-direction: column;
+  padding: 60px 20px;
+}
+
+.sidebar-container a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    width: 55%;
+  }
+  .navbar-links {
+    display: none;
+  }
+  
+  .burger-menu {
+    display: flex;
+  }
+}

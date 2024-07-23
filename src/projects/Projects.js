@@ -16,6 +16,11 @@ const headerVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
 };
 
+const cardVariants = {
+  hidden: { opacity: 0, x: 200 },
+  visible: { opacity: 1, x: 0, transition: { duration: 1, ease: "easeOut" } }
+};
+
 function Projects() {
   const sliderRef = useRef(null);
   const slidesRef = useRef(null);
@@ -67,6 +72,10 @@ function Projects() {
       <div ref={sliderRef} className="carousel-container">
         <motion.div
           ref={slidesRef}
+          initial="hidden"
+          animate="visible"
+          variants={cardVariants}
+          transition={{ staggerChildren: 0.2, delayChildren: 0.8 }}
           drag="x"
           dragConstraints={{
             left: -(slidesWidth - sliderWidth + totalSlidesMarginRight),
