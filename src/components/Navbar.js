@@ -62,7 +62,7 @@ function Navbar() {
         {open && (
           <motion.aside
             initial={{ width: 0 }}
-            animate={{ width: 300 }}
+            animate={{ width: '65%' }}
             exit={{ width: 0, transition: { delay: 0.7, duration: 0.3 } }}
             className="sidebar"
           >

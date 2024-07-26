@@ -7,7 +7,7 @@ function Footer() {
     <footer className="footer">
       <div className="footer-content">
         <h2>Ayaz Baig | Portfolio</h2>
-        <p>Seasoned Full Stack Software Developer with years of hands-on experience in designing and implementing robust, scalable, and innovative solutions.</p>
+        <p>Full Stack Software Developer with years of hands-on experience in designing and implementing robust, scalable, and innovative solutions.</p>
         <div className="email">
           <FaEnvelope className="icon" />
           <a href="mailto:ayazbaig@hotmail.co.uk" className="email-link">ayazbaig@hotmail.co.uk</a>

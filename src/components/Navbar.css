@@ -75,14 +75,23 @@
 
 @media (max-width: 768px) {
   .navbar {
-    width: 70%;
+    justify-content: space-between; 
+    padding: 5px 20px;
+    width: 100%;
   }
-  
+
+  .navbar-logo {
+    flex: 1;
+  }
+
   .navbar-links {
     display: none;
   }
-  
+
   .burger-menu {
     display: flex;
+    position: relative;
+    right: 0;
+    margin-right: 30px;
   }
 }

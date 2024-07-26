@@ -78,7 +78,7 @@ function Projects() {
         <motion.div
           ref={slidesRef}
           initial="hidden"
-          animate="visible"
+          animate={inView ? "visible" : "hidden"}
           variants={cardVariants}
           transition={{ staggerChildren: 0.2, delayChildren: 0.8 }}
           drag={!isMobile ? "x" : false}
