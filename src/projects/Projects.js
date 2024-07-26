@@ -21,6 +21,11 @@ const cardVariants = {
   visible: { opacity: 1, x: 0, transition: { duration: 1, ease: "easeOut" } }
 };
 
+const mobileCardVariants = {
+  hidden: { opacity: 0, y: 200 },
+  visible: { opacity: 1, y: 0, transition: { duration: 1, ease: "easeOut" } }
+};
+
 function Projects() {
   const sliderRef = useRef(null);
   const slidesRef = useRef(null);
@@ -79,7 +84,7 @@ function Projects() {
           ref={slidesRef}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
-          variants={cardVariants}
+          variants={isMobile ? mobileCardVariants : cardVariants}
           transition={{ staggerChildren: 0.2, delayChildren: 0.8 }}
           drag={!isMobile ? "x" : false}
           dragConstraints={!isMobile ? {
