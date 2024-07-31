@@ -121,7 +121,7 @@ function Projects() {
           <ProjectCard 
             image={salamHealthImage} 
             title="Salam Health" 
-            url="https://github.com/ayazb7/salam-health-website" 
+            url="https://www.salamhealth.co/" 
           />
         </motion.div>
       </div>
