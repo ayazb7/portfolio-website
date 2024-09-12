@@ -15,7 +15,7 @@ function Experience() {
       companyLogo: sotonLogo,
       jobTitle: 'Mobile Developer Research Intern',
       companyName: 'University of Southampton',
-      dateRange: 'February 2024 - Present',
+      dateRange: 'February 2024 - August 2024',
       description: [
         'Designing and developing a mobile application to improve routing for electric vehicle users',
         'Working alongside research fellows to develop a routing algorithm catered for improving journey and charging times for electric vehicles',
