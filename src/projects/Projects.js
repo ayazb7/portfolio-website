@@ -10,6 +10,7 @@ import virtualLabImage from './images/virtuallab.png';
 import salamHealthImage from './images/salamhealth.png';
 import portfolioImage from './images/portfolio.png';
 import quiplashImage from './images/quiplash.png';
+import mmaStatsImage from './images/mmastats.png';
 
 const headerVariants = {
   hidden: { opacity: 0, y: -50 },
@@ -97,6 +98,11 @@ function Projects() {
             image={researchProjImage} 
             title="Dementia ML Research Project" 
             url="https://github.com/ayazb7/individual-project" 
+          />
+          <ProjectCard 
+            image={mmaStatsImage} 
+            title="MMA Tracker" 
+            url="https://github.com/ayazb7/mma-tracker" 
           />
           <ProjectCard 
             image={qwizImage} 
