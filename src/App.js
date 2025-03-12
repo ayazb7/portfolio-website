@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import About from './about/About';
 import Experience from './experience/Experience';
 import Projects from './projects/Projects';
 import Contact from './contact/Contact';
 import Footer from './components/Footer';
+import TestRedirect from './pages/TestRedirect'; // Import the new page
 import './App.css';
 
 import { initializeApp } from "firebase/app";
@@ -28,22 +30,29 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <Router>
       <Navbar />
-      <section id="about">
-        <About />
-      </section>
-      <section id="experience">
-        <Experience />
-      </section>
-      <section id="projects">
-        <Projects />
-      </section>
-      <section id="contact">
-        <Contact />
-      </section>
-      <Footer />
-    </div>
+      <Routes>
+        <Route path="/" element={
+          <div className="App">
+            <section id="about">
+              <About />
+            </section>
+            <section id="experience">
+              <Experience />
+            </section>
+            <section id="projects">
+              <Projects />
+            </section>
+            <section id="contact">
+              <Contact />
+            </section>
+            <Footer />
+          </div>
+        } />
+        <Route path="/test-redirect" element={<TestRedirect />} /> 
+      </Routes>
+    </Router>
   );
 }
 
