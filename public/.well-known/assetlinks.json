@@ -1,0 +1,11 @@
+[
+    {
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "com.nusmark.nusmark_app",
+        "sha256_cert_fingerprints": ["11:2C:4A:AE:27:B6:8C:EC:63:14:44:EA:6B:5C:FB:EB:13:A7:E3:B2:E0:97:64:AE:33:04:8C:D3:3D:D4:15:AC"]
+      }
+    }
+  ]
+  
